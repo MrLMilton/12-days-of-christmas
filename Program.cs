@@ -32,7 +32,7 @@ namespace _12_days_of_christmas
                     Console.Write("And ");
                 }
                 Console.WriteLine(Items[0]);
-                Console.WriteLine();
+                Console.WriteLine("\n The whole song goes like this\n");
                 for (int day = 0; day < Items.Length; day++)
                 {
                     Console.WriteLine($"On the {days[day]} day of Christmas my true love sent to me:");
@@ -56,24 +56,15 @@ namespace _12_days_of_christmas
                 Console.WriteLine($"your gift today is {Items[currentDay]}");
                 Console.WriteLine("What day did you recive this gift for the first time?");
                 int userDay = Convert.ToInt32(Console.ReadLine()) - 1;
-                if (userDay == currentDay)
-                {
-                    Console.WriteLine("Correct! you got a perfect score");
-                }
-                else {
                     while (userDay != currentDay && score > 0)
                     {
                         score--;
-                        if (score != 0)
-                        {
-                            Console.WriteLine("Wrong day, try again!");
-                            userDay = Convert.ToInt32(Console.ReadLine()) - 1;
-                        }
-
+                        Console.WriteLine("Wrong day, try again!");
+                        userDay = Convert.ToInt32(Console.ReadLine()) - 1;
                     } 
-                    if (score > 0)
+                    if (userDay == currentDay)
                     {
-                        Console.WriteLine($"Correct! you score was {score}");
+                        Console.WriteLine($"Correct! you score was {score+1}");
                     }
                     else
                     {
@@ -82,7 +73,6 @@ namespace _12_days_of_christmas
 
 
                     }
-                }
             }
         }
     }
