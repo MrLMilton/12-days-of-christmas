@@ -84,7 +84,6 @@ namespace _12_days_of_christmas
                     }
                 }
             }
-            Console.WriteLine("end of code");
         }
     }
 }
